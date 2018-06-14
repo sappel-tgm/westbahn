@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name = "Reservierung" table = "RESERVIERUNG">
+		
+		<meta attribute = "class-description">
+         This class contains the reservation details
+      	</meta>
+    
+    	<id name = "ID" type = "Long" column = "ID" access="field">
+         	<generator class="increment"></generator>
+      	</id>
+      	
+      	<property name = "datum" column = "datum" type = "Date" access="field"/>
+      	<property name = "praemienMeilenBonus" column = "praemienMeilenBonus" type = "int" access="field"/>
+      	<property name = "preis" column = "preis" type = "int" access="field"/>
+      	<property name = "status" column = "status" type = "StatusInfo" access="field"/>
+      	<property name = "zug" column = "zug" type = "Zug" access="field"/>
+      	<property name = "strecke" column = "strecke" type = "Strecke" access="field"/>
+      	<property name = "benutzer" column = "benutzer" type = "Benutzer" access="field"/>
+      	<property name = "zahlung" column = "zahlung" type = "Zahlung" access="field"/>
+      	
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name = "westbahn.Reservierung">
+		
+		<meta attribute = "class-description">
+         This class contains the reservation details
+      	</meta>
+    
+    	<id name = "ID" type = "Long" access="field">
+         	<generator class="increment"></generator>
+      	</id>
+      	
+      	<property name = "datum" type = "java.util.Date" access="field"/>
+      	<property name = "praemienMeilenBonus" type = "int" access="field"/>
+      	<property name = "preis" type = "int" access="field"/>
+      	<component name = "status" class = "westbahn.StatusInfo" access="field"/>
+      	<one-to-one name = "zug" class = "westbahn.Zug" access="field"/>
+      	<many-to-one name = "strecke" class = "westbahn.Strecke" access="field"/>
+      	<many-to-one name = "benutzer" class = "westbahn.Benutzer" access="field"/>
+      	<component name = "zahlung" class = "westbahn.Zahlung" access="field"/>
+      	
+    </class>
+</hibernate-mapping>
